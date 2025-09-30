@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div>
+  <h1>Click on the GitHub icon below to view the project online.</h1>
+  <a href="https://your-project-link.netlify.app/">
+    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+</div>
 
-## Getting Started
+# Travel-Mate 🌍✈️🏨
 
-First, run the development server:
+Travel-Mate is a modern travel booking web application. Users can search for flights and hotels, view special offers, and book services through an interactive and fully responsive UI. The project demonstrates advanced front-end skills using React, Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<ul>
+  <li>Search for flights by origin, destination, and date</li>
+  <li>Search for hotels by country and view special discounted offers</li>
+  <li>Interactive booking forms with validation</li>
+  <li>Sold-out functionality for flights and hotels with localStorage persistence</li>
+  <li>Responsive UI optimized for desktop and mobile</li>
+  <li>Reusable React components with TypeScript for type safety</li>
+  <li>Modal windows with smooth animations for booking confirmation</li>
+  <li>Offers page showcasing limited-time hotel discounts</li>
+  <li>Contact page with a professional and modern design</li>
+</ul>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Technologies Used:
 
-To learn more about Next.js, take a look at the following resources:
+<ul>
+  <li>
+    React for building UI components
+    <img width='20px' src='https://skillicons.dev/icons?i=react'>
+  </li>
+  <li>
+    Next.js for routing and server-side rendering
+    <img width='20px' src='https://skillicons.dev/icons?i=next'>
+  </li>
+  <li>
+    TypeScript for type safety
+    <img width='20px' src='https://skillicons.dev/icons?i=typescript'>
+  </li>
+  <li>
+    Tailwind CSS for fast and responsive styling
+    <img width='20px' src='https://skillicons.dev/icons?i=tailwindcss'>
+  </li>
+  <li>
+    Framer Motion for smooth animations
+    <img width='20px' src='https://skillicons.dev/icons?i=framer'>
+  </li>
+  <li>
+    React Icons for scalable vector icons
+    <img width='20px' src='https://skillicons.dev/icons?i=react'>
+  </li>
+</ul>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Description:
 
-## Deploy on Vercel
+Travel-Mate is a full-featured front-end project replicating a modern travel booking experience. Users can:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Search for flights between countries with dynamic pricing and ratings
+- Book flights with a fully functional modal including user input validation
+- View hotel offers with discounts and limited-time availability
+- Experience "sold out" logic for flights and hotels using localStorage
+- Explore offers with animated cards and responsive layouts
+- Contact the service via a modern contact page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project showcases:
+
+- Dynamic flight and hotel listings with reusable React components
+- Smooth UI animations using Framer Motion
+- Persistent state using localStorage for sold-out items
+- Fully responsive design with Tailwind CSS
+- Interactive and professional booking experience
+
+---
+
+<h1 align="center">Project picture 🖼️</h1>
+
+<div align="center">
+  <img src="/pic1.png" width="700px" />
+  <br/><br/>
+  <img src="/pic2.png" width="700px" />
+</div>
+
+<hr/>
+
+<div align="center">
+  <img src="/pic3.png" width="700px" />
+  <br/><br/>
+  <img src="/pic4.png" width="700px" />
+</div>
