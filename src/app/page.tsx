@@ -1,103 +1,231 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  FaPlaneDeparture,
+  FaHotel,
+  FaStar,
+  FaSearch,
+  FaUsers,
+} from "react-icons/fa";
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+export default function UltimateDashboard() {
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [date, setDate] = useState("");
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [filterRating] = useState(0);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const offers = [
+    {
+      city: "Paris",
+      price: "$299",
+      rating: 4.8,
+      img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      city: "Dubai",
+      price: "$399",
+      rating: 4.6,
+      img: "https://aaochalo.com/wp-content/uploads/2025/06/stopover-in-dubai_dubai-by-night.jpg",
+    },
+    {
+      city: "Istanbul",
+      price: "$199",
+      rating: 4.7,
+      img: "https://www.midtown-hotel.com/wp-content/uploads/2018/09/Emino%CC%88nu%CC%88.jpg",
+    },
+  ];
+
+  const stats = [
+    { icon: <FaPlaneDeparture />, label: "Flights Booked", value: 2000 },
+    { icon: <FaHotel />, label: "Hotels", value: 500 },
+    { icon: <FaUsers />, label: "Happy Customers", value: 1200 },
+  ];
+
+  const testimonials = [
+    {
+      name: "Alice",
+      city: "London",
+      avatar: "https://cdn.pixabay.com/photo/2020/09/10/11/30/girl-5560212_640.jpg",
+      text: "TravelMate made my trip seamless and fun!",
+    },
+    {
+      name: "Bob",
+      city: "New York",
+      avatar: "https://img.freepik.com/free-photo/medium-shot-contemplative-man-seaside_23-2150531590.jpg?semt=ais_hybrid&w=740&q=80",
+      text: "Amazing experience, highly recommend!",
+    },
+    {
+      name: "Clara",
+      city: "Paris",
+      avatar: "https://play-lh.googleusercontent.com/_qUtBpMVsGY-CLPx2DreAENHAbr4KHwBGn2w_3jhGSzoRVFRKn0SXUaK0wXSU0SJ7A",
+      text: "Fast booking, great deals, love it!",
+    },
+  ];
+
+  // Auto-slide testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  // Filtered offers
+  const filteredOffers = offers.filter((o) => o.rating >= filterRating);
+
+  return (
+    <div className="min-h-screen flex flex-col font-sans bg-white text-black">
+      {/* Hero Section */}
+      <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden">
+        <motion.div
+          className="absolute inset-0"
+          animate={{ scale: [1, 1.08, 1], rotate: [0, 0.5, 0] }}
+          transition={{ duration: 30, repeat: Infinity }}
+          style={{
+            backgroundImage:
+              "url('https://wallpapers.com/images/hd/travel-hd-axhrsecphqby11wk.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "brightness(0.6)",
+          }}
+        />
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center max-w-4xl px-4"
+        >
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-white">
+            Travel The World Like Never Before 
+          </h1>
+          <p className="text-xl md:text-2xl mb-12 text-gray-200">
+            Book Flights & Hotels Instantly with Style & Ease
+          </p>
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="bg-white text-black rounded-3xl shadow-2xl p-6 flex flex-col md:flex-row gap-4 items-center max-w-3xl mx-auto"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <input
+              type="text"
+              placeholder="From"
+              value={from}
+              onChange={(e) => setFrom(e.target.value)}
+              className="w-full md:w-1/4 px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <input
+              type="text"
+              placeholder="To"
+              value={to}
+              onChange={(e) => setTo(e.target.value)}
+              className="w-full md:w-1/4 px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="w-full md:w-1/4 px-4 py-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-purple-500 hover:to-blue-500 text-white px-6 py-3 rounded-2xl flex items-center gap-2 font-semibold transition-transform transform hover:scale-105">
+              <FaSearch /> Search
+            </button>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Offers */}
+      <section className="py-20 bg-gray-50 text-black text-center relative">
+        <h3 className="text-3xl font-bold mb-6">🔥 Trending Destinations</h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 px-6 md:px-20">
+          {filteredOffers.map((offer, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05, rotateX: 5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: true }}
+              className="bg-white shadow-lg rounded-3xl overflow-hidden cursor-pointer transform transition-transform duration-300"
+            >
+              <Image
+                width={1000}
+                height={1000}
+                src={offer.img}
+                alt={offer.city}
+                className="w-full h-64 md:h-72 object-cover"
+              />
+              <div className="p-6">
+                <h4 className="text-xl font-bold mb-2">{offer.city}</h4>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <FaStar className="text-yellow-400" /> {offer.rating}
+                </div>
+                <p className="text-gray-600 mb-2">
+                  Starting from {offer.price}
+                </p>
+                <p className="text-gray-500 mb-4">Availability: Limited</p>
+                <button className="bg-gradient-to-r from-green-500 to-teal-500 text-white px-4 py-2 rounded-xl hover:scale-105 transform transition">
+                  Book Now
+                </button>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* Stats */}
+      <section className="py-20 bg-white text-black text-center">
+        <h3 className="text-3xl font-bold mb-12">Our Achievements</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-20">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.3 }}
+              className="flex flex-col items-center bg-gray-100 p-8 rounded-2xl shadow-lg"
+            >
+              <div className="text-4xl mb-4">{stat.icon}</div>
+              <h4 className="text-xl font-bold">{stat.value}+</h4>
+              <p className="text-gray-600">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-gray-100 text-black text-center">
+        <h3 className="text-3xl font-bold mb-12">What Our Customers Say</h3>
+        <motion.div
+          key={testimonialIndex}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-xl mx-auto bg-white shadow-xl rounded-2xl p-8 flex flex-col items-center"
         >
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            width={1000}
+            height={1000}
+            src={testimonials[testimonialIndex].avatar}
+            alt={testimonials[testimonialIndex].name}
+            className="w-20 h-20 rounded-full mb-4"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <h4 className="text-xl font-bold">
+            {testimonials[testimonialIndex].name},{" "}
+            {testimonials[testimonialIndex].city}
+          </h4>
+          <p className="mt-2 text-gray-600 italic">
+            {testimonials[testimonialIndex].text}
+          </p>
+        </motion.div>
+      </section>
+
+      
     </div>
   );
 }
