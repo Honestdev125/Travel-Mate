@@ -1,85 +1,74 @@
-<div>
-  <h1>Click on the GitHub icon below to view the project online.</h1>
+<div align="center">
+  <h1>🌍 Travel-Mate</h1>
+  <p>Search flights & hotels, book trips, and explore offers with a modern, responsive UI ✈️🏨</p>
   <a href="https://hamiparsa.github.io/Travel-Mate/">
-    <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white"/>
+    <img src="https://img.shields.io/badge/View_Live_Project-0077B6?style=for-the-badge&logo=next&logoColor=white"/>
   </a>
 </div>
 
-# Travel-Mate 🌍✈️🏨
+---
 
-Travel-Mate is a modern travel booking web application. Users can search for flights and hotels, view special offers, and book services through an interactive and fully responsive UI. The project demonstrates advanced front-end skills using React, Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+## 📝 About the Project
+
+**Travel-Mate** is a modern travel booking web application where users can:
+
+- Search flights and hotels  
+- View special offers and limited-time discounts  
+- Book services through interactive forms with validation  
+
+Built with **React**, **Next.js**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, this project demonstrates advanced front-end skills and interactive UI design.
 
 ---
 
-## Features:
+## ✨ Features
 
 <ul>
-  <li>Search for flights by origin, destination, and date</li>
-  <li>Search for hotels by country and view special discounted offers</li>
-  <li>Interactive booking forms with validation</li>
-  <li>Sold-out functionality for flights and hotels with localStorage persistence</li>
-  <li>Responsive UI optimized for desktop and mobile</li>
-  <li>Reusable React components with TypeScript for type safety</li>
-  <li>Modal windows with smooth animations for booking confirmation</li>
-  <li>Offers page showcasing limited-time hotel discounts</li>
-  <li>Contact page with a professional and modern design</li>
+  <li>🔍 Search flights by origin, destination, and date</li>
+  <li>🏨 Search hotels by country with special offers</li>
+  <li>📝 Interactive booking forms with validation</li>
+  <li>⚡ Sold-out functionality with localStorage persistence</li>
+  <li>💻 Responsive UI for desktop and mobile</li>
+  <li>♻️ Reusable React components with TypeScript</li>
+  <li>🎛️ Modal windows with smooth animations for bookings</li>
+  <li>🎉 Offers page showcasing limited-time hotel discounts</li>
+  <li>📧 Contact page with modern design</li>
 </ul>
 
 ---
 
-## Technologies Used:
+## 🧰 Tech Stack
 
-<ul>
-  <li>
-    React for building UI components
-    <img width='20px' src='https://skillicons.dev/icons?i=react'>
-  </li>
-  <li>
-    Next.js for routing and server-side rendering
-    <img width='20px' src='https://skillicons.dev/icons?i=next'>
-  </li>
-  <li>
-    TypeScript for type safety
-    <img width='20px' src='https://skillicons.dev/icons?i=typescript'>
-  </li>
-  <li>
-    Tailwind CSS for fast and responsive styling
-    <img width='20px' src='https://skillicons.dev/icons?i=tailwindcss'>
-  </li>
-  <li>
-    Framer Motion for smooth animations
-    <img width='20px' src='https://skillicons.dev/icons?i=framer'>
-  </li>
-  <li>
-    React Icons for scalable vector icons
-    <img width='20px' src='https://skillicons.dev/icons?i=react'>
-  </li>
-</ul>
+| Technology | Purpose |
+|------------|---------|
+| ⚛️ **React** | Building interactive UI components |
+| 🧭 **Next.js** | Routing and server-side rendering |
+| 🟦 **TypeScript** | Type safety and maintainable code |
+| 🎨 **Tailwind CSS** | Responsive and modern styling |
+| 🪄 **Framer Motion** | Smooth UI animations |
+| 🎨 **React Icons** | Scalable vector icons |
 
 ---
 
-## Description:
+## 💡 Description
 
-Travel-Mate is a full-featured front-end project replicating a modern travel booking experience. Users can:
+Travel-Mate replicates a modern travel booking experience. Users can:
 
-- Search for flights between countries with dynamic pricing and ratings
-- Book flights with a fully functional modal including user input validation
-- View hotel offers with discounts and limited-time availability
-- Experience "sold out" logic for flights and hotels using localStorage
-- Explore offers with animated cards and responsive layouts
-- Contact the service via a modern contact page
+- Browse dynamic flight and hotel listings  
+- Book flights and hotels via modals with validation  
+- Experience "sold-out" logic using localStorage  
+- Explore animated offer cards and responsive layouts  
+- Contact support through a professional page  
 
-The project showcases:
+The project demonstrates:
 
-- Dynamic flight and hotel listings with reusable React components
-- Smooth UI animations using Framer Motion
-- Persistent state using localStorage for sold-out items
-- Fully responsive design with Tailwind CSS
-- Interactive and professional booking experience
+- Interactive, reusable components  
+- Smooth animations and responsive layouts  
+- Persistent state management for sold-out items  
+- A full-featured modern travel UI  
 
 ---
 
-<h1 align="center">Project picture 🖼️</h1>
+## 🖼️ Project Preview
 
 <div align="center">
   <img src="/pic1.png" width="700px" />
@@ -93,4 +82,10 @@ The project showcases:
   <img src="/pic3.png" width="700px" />
   <br/><br/>
   <img src="/pic4.png" width="700px" />
+</div>
+
+---
+
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=react,next,typescript,tailwind,framer" />
 </div>
