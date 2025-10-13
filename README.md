@@ -86,6 +86,13 @@ The project demonstrates:
 
 ---
 
+## 👨‍💻 Author
+
+**Developed by:** [Hami Parsa](https://github.com/hamiparsa)  
+💬 Front-End Developer | Passionate about interactive web applications  
+
+---
+
 <div align="center">
   <img src="https://skillicons.dev/icons?i=react,next,typescript,tailwind,framer" />
 </div>
