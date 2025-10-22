@@ -1,7 +1,7 @@
 <div align="center">
   <h1>🌍 Travel-Mate</h1>
   <p>Search flights & hotels, book trips, and explore offers with a modern, responsive UI ✈️🏨</p>
-  <a href="https://hamiparsa.github.io/Travel-Mate/">
+  <a href="https://honestdev125.github.io/Travel-Mate/">
     <img src="https://img.shields.io/badge/View_Live_Project-0077B6?style=for-the-badge&logo=next&logoColor=white"/>
   </a>
 </div>
@@ -88,7 +88,7 @@ The project demonstrates:
 
 ## 👨‍💻 Author
 
-**Developed by:** [Hami Parsa](https://github.com/hamiparsa)  
+**Developed by:** [Niku Namada](https://github.com/honestdev125)  
 💬 Front-End Developer | Passionate about interactive web applications  
 
 ---
